@@ -396,7 +396,7 @@ footer{
 </a>
 
 <div id="ckbar" hidden>
-  <span>האתר אינו משתמש בעוגיות מעקב או פרסום. <a href="cookies.html">למדיניות העוגיות</a></span>
+  <span>האתר משתמש בקובצי Cookie חיוניים בלבד לתפעול תקין — ללא עוגיות מעקב, פרסום או אנליטיקה. <a href="cookies.html">למדיניות העוגיות</a></span>
   <button id="ckok">הבנתי</button>
 </div>
 <script>
@@ -409,11 +409,13 @@ footer{
   ok.addEventListener('click', function(){
     try { localStorage.setItem('ckAck','1'); } catch(e){}
     b.hidden = true;
+    b.style.display = 'none';
   });
   if (m) m.addEventListener('click', function(ev){
     ev.preventDefault();
     try { localStorage.removeItem('ckAck'); } catch(e){}
     b.hidden = false;
+    b.style.display = 'flex';
     b.scrollIntoView({block:'end'});
   });
 })();
